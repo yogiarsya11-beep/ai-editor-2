@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CapCut AI Video Editor</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+.timeline-scroll::-webkit-scrollbar{
+    height:8px;
+}
+.timeline-scroll::-webkit-scrollbar-thumb{
+    background:#444;
+    border-radius:10px;
+}
+</style>
+
+</head>
+<body class="bg-gray-950 text-white h-screen overflow-hidden">
+
+<div class="flex h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-20 bg-gray-900 border-r border-gray-800 flex flex-col items-center py-4 gap-6">
+
+        <button class="hover:text-green-400">🎬</button>
+        <button class="hover:text-green-400">📝</button>
+        <button class="hover:text-green-400">🎵</button>
+        <button class="hover:text-green-400">😊</button>
+        <button class="hover:text-green-400">✨</button>
+        <button class="hover:text-green-400">⚙️</button>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col">
+
+        <!-- Header -->
+        <header class="h-16 border-b border-gray-800 flex items-center justify-between px-6">
+
+            <h1 class="font-bold text-xl">
+                CapCut AI Editor
+            </h1>
+
+            <div class="flex gap-3">
+
+                <button class="bg-gray-800 px-4 py-2 rounded-lg">
+                    Save
+                </button>
+
+                <button class="bg-green-500 px-4 py-2 rounded-lg font-semibold">
+                    Export
+                </button>
+
+            </div>
+
+        </header>
+
+        <!-- Editor Area -->
+        <section class="flex flex-1">
+
+            <!-- Video Preview -->
+            <div class="flex-1 flex flex-col items-center justify-center bg-black">
+
+                <div class="w-[720px] h-[405px] bg-gray-800 rounded-xl overflow-hidden shadow-lg relative">
+
+                    <video
+                        id="video"
+                        controls
+                        class="w-full h-full object-cover"
+                    >
+                    </video>
+
+                    <!-- Subtitle Preview -->
+                    <div
+                        class="absolute bottom-8 left-0 right-0 text-center text-3xl font-bold"
+                    >
+                        Halo semuanya 👋
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Panel -->
+            <div class="w-80 bg-gray-900 border-l border-gray-800 p-4">
+
+                <h2 class="font-bold text-lg mb-4">
+                    Subtitle Editor
+                </h2>
+
+                <textarea
+                    class="w-full h-40 bg-gray-800 rounded-lg p-3"
+                >
+Halo semuanya
+Selamat datang di editor AI
+                </textarea>
+
+                <div class="mt-5">
+
+                    <label class="block mb-2">
+                        Subtitle Style
+                    </label>
+
+                    <select class="w-full bg-gray-800 p-2 rounded-lg">
+                        <option>Karaoke</option>
+                        <option>Glow</option>
+                        <option>Bounce</option>
+                        <option>TikTok</option>
+                        <option>Cinematic</option>
+                    </select>
+
+                </div>
+
+                <div class="mt-5">
+
+                    <label class="block mb-2">
+                        Font Size
+                    </label>
+
+                    <input
+                        type="range"
+                        min="20"
+                        max="100"
+                        value="48"
+                        class="w-full"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Timeline -->
+        <section
+            class="h-56 bg-gray-900 border-t border-gray-800 p-4"
+        >
+
+            <div class="mb-2 flex justify-between">
+
+                <span>Timeline</span>
+
+                <button
+                    class="bg-green-500 px-3 py-1 rounded"
+                >
+                    + Add
